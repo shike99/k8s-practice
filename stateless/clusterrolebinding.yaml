@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: asm-k8s
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: asm:kubernetes-observer
+subjects:
+- kind: ServiceAccount
+  name: asm-k8s-account
+  namespace: default
